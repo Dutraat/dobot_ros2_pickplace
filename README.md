@@ -24,7 +24,7 @@ The system combines **physical robotics**, **computer vision**, **simulation in 
 - **Operating System:** Manjaro Linux  
 - **ROS 2:** Humble Hawksbill  
 - **Language:** Python 3.10+  
-- **Environment Manager:** Mamba (or Conda)  
+- **Environment Manager:** Mamba   
 
 Simulation/Testing Tools:
 - **RViz:** 3D visualization of the robot and workspace  
@@ -39,3 +39,9 @@ Simulation/Testing Tools:
    ```bash
    git clone https://github.com/your-username/dobot-magician-ros2-research.git
    cd dobot-magician-ros2-research
+
+ ## 🦾 Optional but Mandatory Step
+
+Every robotic arm needs a name — it’s the law of robotics (well, almost ).  
+In this project, the Dobot Magician was baptized as **Ismaildo**.  
+Feel free to choose your own… but beware, unnamed robots may refuse to cooperate!

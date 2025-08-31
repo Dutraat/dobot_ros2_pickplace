@@ -92,7 +92,7 @@ Example (launch files will be provided):
 ros2 launch magician_ros2 bringup.launch.py
 ```
 
-✨ **Ready to go!** Your Dobot ROS2 environment is now set up and ready for use.
+✨ You’re on your own now… don’t worry, the universe loves a good blooper reel.
 
 ---
 

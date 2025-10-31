@@ -44,23 +44,17 @@ Check your version:
 ```bash
 python3 --version
 ```
-
-### 2. Create the environment with Mamba (or Conda)
-If you don't have **Mamba**, install it first:
-```bash
-conda install mamba -n base -c conda-forge
-```
-
-Then create and activate the environment:
-```bash
-mamba create -n dobot-ros2 python=3.10
-mamba activate dobot-ros2
-```
-
-### 3. Install ROS 2 Humble
+### 2. Install ROS 2 Humble
 Follow the official instructions for your OS:
 
 👉 [ROS 2 Humble installation guide](https://docs.ros.org/en/humble/Installation.html)
+
+### 3. Create the environment 
+If you don't have **ROS 2**, install it first:
+
+Follow the official instructions for your OS:
+
+👉 [Create the environment](https://robostack.github.io/GettingStarted.html)
 
 After installation, don't forget to source the setup file in every new terminal:
 ```bash
@@ -68,6 +62,7 @@ source /opt/ros/humble/setup.zsh
 ```
 
 ### 4. Clone the Dobot repository
+> 🦾 This step is essential — it establishes the connection between ROS 2 and the Dobot Magician.
 ```bash
 git clone https://github.com/jkaniuka/magician_ros2
 cd magician_ros2
@@ -93,8 +88,6 @@ ros2 launch dobot_bringup dobot_magician_control_system.launch.py
 ```
 
 ✨ You’re on your own now… don’t worry, the universe loves a good blooper reel.
-
----
 
 ⚠️ **Note:** This project is being developed on **Manjaro Linux**.  
 > Some commands may vary depending on your operating system.  

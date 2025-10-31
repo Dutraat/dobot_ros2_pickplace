@@ -62,12 +62,15 @@ source /opt/ros/humble/setup.zsh
 ```
 
 ### 4. Clone the Dobot repository
-> 🦾 This step is essential — it establishes the connection between ROS 2 and the Dobot Magician.
+> 🦾 You need two repositories — one for the ROS 2 integration and another for this research project’s scripts.
 ```bash
 git clone https://github.com/jkaniuka/magician_ros2
 cd magician_ros2
 ```
-
+Then clone this project repository, which contains the scripts and configurations for the pick-and-place scenario:
+```bash
+git clone git@github.com:Dutraat/dobot_ros2_pickplace.git
+```
 ### 5. Install dependencies
 Inside your environment, install the Python dependencies:
 ```bash
@@ -87,15 +90,78 @@ Example (launch files will be provided):
 ros2 launch dobot_bringup dobot_magician_control_system.launch.py
 ```
 
-✨ You’re on your own now… don’t worry, the universe loves a good blooper reel.
-
 ⚠️ **Note:** This project is being developed on **Manjaro Linux**.  
 > Some commands may vary depending on your operating system.  
 > Please refer to the official [ROS 2 installation guide](https://docs.ros.org/en/humble/Installation.html) for details specific to your OS.
 
+---
+
+# 🧠 System Overview
+
+The current system integrates the **Dobot Magician** robotic arm with the **ROS 2 Humble** ecosystem, enabling control and communication between hardware and software components.  
+The project’s goal is to create an experimental scenario for **object manipulation** using ROS 2 nodes, topics, and services.
+
+Below is a simplified diagram of the system’s structure and data flow:
+
+
+
+## 🗂️ Architecture Diagram
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ff0a9144-458d-431d-b85d-d35860501129" alt="System Diagram" width="700"/>
+</p>
+
+
+> Figure 1 — Overview of the current ROS 2 + Dobot Magician ecosystem. For a detailed technical explanation of the system, check the [Technical Study]().
+
+
+## ⚙️ System Description
+
+The system is composed of multiple interconnected modules:
+
+- **ROS 2 Nodes:** Handle robot control, command publishing, and data exchange.  
+- **Dobot Interface (magician_ros2):** Provides low-level communication between ROS 2 and the robotic arm.  
+- **Pick-and-Place Scripts:** Implement motion planning and execution for object manipulation.  
+- **Workspace Definition:** Defines safe areas, limits, and target positions for pick-and-place operations.  
+- **Simulation Tools:** Used to validate motion and workspace boundaries before executing on real hardware.
+
+---
+
+## 🧾 Script Development
+
+So far, the following scripts have been developed and tested:
+
+- `move_linear.py` → Executes linear movements between Cartesian coordinates.  
+- `move_relative.py` → Implements relative motion commands based on current position.  
+- `dobot_diagnostic.py` → Performs a full system check on the Dobot Magician, verifying communication, calibration, and current position limits to ensure the robot is within its safe workspace.   
+
+Each script is modular and can be executed individually or integrated into a combined motion routine.
+
+---
+
+## 🔄 Current Progress
+
+✅ ROS 2 environment successfully configured  
+✅ Dobot connection established and tested  
+✅ Basic movement and gripper control implemented  
+✅ Position validation
+🔄 In progress: relative motion  
+🔜 Next steps: conveyor integration and object sorting automation  
+
+---
+
+## 🔬 Notes
+
+- The workspace boundaries and Cartesian coordinates are defined experimentally to avoid overextension of the Dobot’s servos.  
+- Testing is initially performed using **RViz** and **Dobot Studio** for safety before executing on the physical hardware.  
+- The modular node-based structure allows future integration with sensors or cameras (e.g., Kinect).
+
+---
+✨ You’re on your own now… don’t worry, the universe loves a good blooper reel.
 ---
  ## 🦾 Optional but Mandatory Step
 
 Every robotic arm needs a name — it’s the law of robotics (well, almost ).  
 In this project, the Dobot Magician was baptized as **Ismaildo**.  
 Feel free to choose your own… but beware, unnamed robots may refuse to cooperate!
+

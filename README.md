@@ -89,7 +89,7 @@ source install/setup.zsh
 ### 7. Run the system
 Example (launch files will be provided):
 ```bash
-ros2 launch magician_ros2 bringup.launch.py
+ros2 launch dobot_bringup dobot_magician_control_system.launch.py
 ```
 
 ✨ You’re on your own now… don’t worry, the universe loves a good blooper reel.
